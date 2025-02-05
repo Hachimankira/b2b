@@ -4,8 +4,17 @@ import { CSS } from "@dnd-kit/utilities";
 import "./Column.css";
 import {
     DragHandleIcon,
-    MinusCircleIcon
+    MinusCircleIcon,
 } from '@shopify/polaris-icons';
+
+import { PiTextAaBold } from "react-icons/pi";
+import { CgOrganisation } from "react-icons/cg";
+import { FaLocationDot, FaPhone } from "react-icons/fa6";
+import { TbWorld } from "react-icons/tb";
+import { CiDiscount1 } from "react-icons/ci";
+import { FaFileAlt } from "react-icons/fa";
+
+
 import { Button, Checkbox, Icon, Select, TextField } from "@shopify/polaris";
 
 // import for modal popup
@@ -71,6 +80,15 @@ const Sortablefield = ({ key, field, handleRemoveField, required, setFields, han
         setTempField(field);
         shopify.modal.hide(`edit-field-modal-${id}`);
     };
+    const iconMapping = {
+        PiTextAaBold: PiTextAaBold,
+        CgOrganisation: CgOrganisation,
+        FaLocationDot: FaLocationDot,
+        FaPhone: FaPhone,
+        TbWorld: TbWorld,
+        CiDiscount1: CiDiscount1,
+        FaFileAlt: FaFileAlt,
+    };
 
 
     return (
@@ -93,7 +111,7 @@ const Sortablefield = ({ key, field, handleRemoveField, required, setFields, han
                         onChange={(value) => handleTempChange("placeholder", value)}
                         autoComplete="off"
                     />
-                    <div style={{ display: 'flex'}}>
+                    <div style={{ display: 'flex' }}>
                         <Checkbox
                             label="Required"
                             checked={tempField.required}
@@ -116,6 +134,12 @@ const Sortablefield = ({ key, field, handleRemoveField, required, setFields, han
                     <button onClick={handleCancel}>Cancel</button>
                 </TitleBar>
             </Modal>
+
+            <Icon
+                source={iconMapping[field.icon] || PiTextAaBold} // Default to TextFontListIcon if not found
+                tone="base"
+            />
+
 
             {/* field Content */}
             <div className="field-content">{field.title}</div>

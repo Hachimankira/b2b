@@ -1,29 +1,29 @@
 {
   "fields": [
-    { "id": 1, "title": "First Name", "active": true, "type": "text", "required": true, "placeholder": "", "position": 1 },
-    { "id": 2, "title": "Second Name", "active": true, "type": "text", "required": true, "placeholder": "", "position": 2 },
-    { "id": 3, "title": "Email", "active": true, "type": "email", "required": true, "placeholder": "", "position": 3 },
-    { "id": 4, "title": "Password", "active": true, "type": "password", "required": true, "placeholder": "", "position": 4 }
+    { "id": 1, "title": "First Name", "active": true, "type": "text", "required": true, "placeholder": "", "position": 1, "icon": "PiTextAaBold" },
+    { "id": 2, "title": "Second Name", "active": true, "type": "text", "required": true, "placeholder": "", "position": 2, "icon": "PiTextAaBold" },
+    { "id": 3, "title": "Email", "active": true, "type": "email", "required": true, "placeholder": "", "position": 3, "icon": "PiTextAaBold" },
+    { "id": 4, "title": "Password", "active": true, "type": "password", "required": true, "placeholder": "", "position": 4, "icon": "PiTextAaBold" }
   ],
   "availableFields": {
     "business": [
-      { "id": 5, "title": "Business Name", "type": "text", "required": false, "placeholder": "", "position": 5 },
-      { "id": 6, "title": "Phone Number", "type": "number", "required": false, "placeholder": "", "position": 6 }
+      { "id": 5, "title": "Business Name", "type": "text", "required": false, "placeholder": "", "position": 5, "icon": "CgOrganisation" },
+      { "id": 6, "title": "Phone Number", "type": "number", "required": false, "placeholder": "", "position": 6, "icon": "FaPhone" }
     ],
     "address": [
-      { "id": 7, "title": "Country", "type": "text", "required": false, "placeholder": "", "position": 7 },
-      { "id": 8, "title": "State", "type": "text", "required": false, "placeholder": "", "position": 8 },
-      { "id": 9, "title": "City", "type": "text", "required": false, "placeholder": "", "position": 9 },
-      { "id": 10, "title": "Zip", "type": "number", "required": false, "placeholder": "", "position": 10 }
+      { "id": 7, "title": "Country", "type": "text", "required": false, "placeholder": "", "position": 7, "icon": "TbWorld" },
+      { "id": 8, "title": "State", "type": "text", "required": false, "placeholder": "", "position": 8, "icon": "FaLocationDot" },
+      { "id": 9, "title": "City", "type": "text", "required": false, "placeholder": "", "position": 9, "icon": "FaLocationDot" },
+      { "id": 10, "title": "Zip", "type": "number", "required": false, "placeholder": "", "position": 10, "icon": "PiTextAaBold" }
     ],
     "Verify vat": [
-      { "id": 11, "title": "EU VAT Validation", "type": "text", "required": false, "placeholder": "", "position": 11 },
-      { "id": 12, "title": "ABN Validation", "type": "text", "required": false, "placeholder": "", "position": 12 },
-      { "id": 13, "title": "India GST Validation", "type": "text", "required": false, "placeholder": "", "position": 13 },
-      { "id": 14, "title": "UK Validation", "type": "text", "required": false, "placeholder": "", "position": 14 }
+      { "id": 11, "title": "EU VAT Validation", "type": "text", "required": false, "placeholder": "", "position": 11, "icon": "CiDiscount1" },
+      { "id": 12, "title": "ABN Validation", "type": "text", "required": false, "placeholder": "", "position": 12, "icon": "CiDiscount1" },
+      { "id": 13, "title": "India GST Validation", "type": "text", "required": false, "placeholder": "", "position": 13, "icon": "CiDiscount1" },
+      { "id": 14, "title": "UK Validation", "type": "text", "required": false, "placeholder": "", "position": 14, "icon": "CiDiscount1" }
     ],
     "File": [
-      { "id": 15, "title": "Upload File", "type": "file", "required": false, "placeholder": "", "position": 15 }
+      { "id": 15, "title": "Upload File", "type": "file", "required": false, "placeholder": "", "position": 15, "icon": "FaFileAlt" }
     ]
   }
 }

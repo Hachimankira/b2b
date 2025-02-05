@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "09585d83a6e6bdfb212dc6265530bf64"
-application_url = "https://stuff-responses-mistake-consoles.trycloudflare.com"
+application_url = "https://sam-ii-greatly-skin.trycloudflare.com"
 embedded = true
 name = "b2b"
 handle = "b2b-31"
@@ -23,9 +23,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://stuff-responses-mistake-consoles.trycloudflare.com/auth/callback",
-  "https://stuff-responses-mistake-consoles.trycloudflare.com/auth/shopify/callback",
-  "https://stuff-responses-mistake-consoles.trycloudflare.com/api/auth/callback"
+  "https://sam-ii-greatly-skin.trycloudflare.com/auth/callback",
+  "https://sam-ii-greatly-skin.trycloudflare.com/auth/shopify/callback",
+  "https://sam-ii-greatly-skin.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

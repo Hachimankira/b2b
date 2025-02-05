@@ -1,10 +1,24 @@
 import { Modal, TitleBar, useAppBridge } from '@shopify/app-bridge-react';
-import { Button } from '@shopify/polaris';
+import { Button, Icon } from '@shopify/polaris';
 import './styles.css'
-
+import { PiTextAaBold } from "react-icons/pi";
+import { CgOrganisation } from "react-icons/cg";
+import { FaLocationDot, FaPhone } from "react-icons/fa6";
+import { TbWorld } from "react-icons/tb";
+import { CiDiscount1 } from "react-icons/ci";
+import { FaFileAlt } from "react-icons/fa";
 export function ModalPopup({ btn_text, activeFields, availableFields, handleAddField }) {
   const activeFieldsIds = activeFields.map((field) => field.id)
   const shopify = useAppBridge();
+  const iconMapping = {
+          PiTextAaBold: PiTextAaBold,
+          CgOrganisation: CgOrganisation,
+          FaLocationDot: FaLocationDot,
+          FaPhone: FaPhone,
+          TbWorld: TbWorld,
+          CiDiscount1: CiDiscount1,
+          FaFileAlt: FaFileAlt,
+      };
   return (
     <>
       <Button
@@ -26,6 +40,10 @@ export function ModalPopup({ btn_text, activeFields, availableFields, handleAddF
                     className='item'
                     disabled={activeFieldsIds.includes(field.id)}
                   >
+                    <Icon
+                      source={iconMapping[field.icon] || PiTextAaBold} // Default to TextFontListIcon if not found
+                      tone="base"
+                    />
                     {field.title}
                   </button>
                 ))}
