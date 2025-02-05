@@ -1,0 +1,17 @@
+{
+    "fields": [
+      { "id": 1, "title": "First Name", "active": true, "type": "text", "required": true },
+      { "id": 2, "title": "Second Name", "active": true, "type": "text", "required": true },
+      { "id": 3, "title": "Email", "active": true, "type": "email", "required": true },
+      { "id": 4, "title": "Password", "active": true, "type": "password", "required": true }
+    ],
+    "availableFields": [
+      { "id": 5, "title": "Business Name", "type": "text", "required": false },
+      { "id": 6, "title": "Country", "type": "text", "required": false },
+      { "id": 7, "title": "State", "type": "text", "required": false },
+      { "id": 8, "title": "City", "type": "text", "required": false },
+      { "id": 9, "title": "Zip", "type": "text", "required": false },
+      { "id": 10, "title": "VAT ID", "type": "text", "required": false }
+    ]
+  }
+  

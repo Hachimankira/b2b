@@ -14,29 +14,17 @@ import { Column } from "../Columns/Cloumn";
 import { BlockStack, Button, Card, InlineGrid } from "@shopify/polaris";
 import './styles.css'
 import { ModalPopup } from "../Modal/ModalPopup";
-
+import fieldsData from "../../fields.json"
 
 export default function DragAndDrop() {
     const shopify = useAppBridge();
 
     const [formHeading, setFormHeading] = useState('Registration Form')
-    const [fields, setFields] = useState([
-        { id: 1, title: "First Name", active: true, type: 'text', required: true },
-        { id: 2, title: "Second Name", active: true, type: 'text', required: true },
-        { id: 3, title: "Email", active: true, type: 'email', required: true },
-        { id: 4, title: "Password", active: true, type: 'password', required: true },
-    ]);
+    const [fields, setFields] = useState(fieldsData.fields);
     console.log("🚀 ~ DragAndDrop ~ fields:", fields)
 
     // Predefined list of additional fields that the user can add
-    const availableFields = [
-        { id: 5, title: "Business Name", type: 'text', required: false },
-        { id: 6, title: "Country", type: 'text', required: false },
-        { id: 7, title: "State", type: 'text', required: false },
-        { id: 8, title: "City", type: 'text', required: false },
-        { id: 9, title: "Zip", type: 'text', required: false },
-        { id: 10, title: "VAT ID", type: 'text', required: false },
-    ];
+    const availableFields = fieldsData.availableFields
 
     const handleAddField = (field) => {
         // Add the selected field to the list of fields and set 'active' to true
@@ -49,6 +37,16 @@ export default function DragAndDrop() {
     const handleRemoveField = (fieldId) => {
         setFields((prevFields) => prevFields.filter(field => field.id !== fieldId));
     };
+
+    const handleChangeField = (fieldId, key, value) => {
+        console.log("hello")
+        setFields((prevFields) =>
+            prevFields.map((field) =>
+                field.id === fieldId ? { ...field, [key]: value } : field
+            )
+        );
+    };
+
 
     const sensors = useSensors(
         useSensor(PointerSensor),
@@ -82,7 +80,12 @@ export default function DragAndDrop() {
                         collisionDetection={closestCorners}
                         onDragEnd={handleDragEnd}
                     >
-                        <Column fields={fields} handleRemoveField={handleRemoveField} setFields={setFields}/>
+                        <Column
+                            fields={fields}
+                            handleRemoveField={handleRemoveField}
+                            setFields={setFields}
+                            handleChangeField={handleChangeField}
+                        />
                     </DndContext>
                     <ModalPopup
                         btn_text="Add More fields"
@@ -104,7 +107,7 @@ export default function DragAndDrop() {
                                     .map((field) => (
                                         <div key={field.id} className="form-group">
                                             <label>{field.title}</label>
-                                            <input type={field.type} placeholder={`Enter ${field.title}`} />
+                                            <input type={field.type} placeholder={`Enter ${field.title}`} required={field.required} />
                                         </div>
                                     ))}
 
