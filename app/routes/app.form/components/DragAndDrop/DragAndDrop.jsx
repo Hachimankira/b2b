@@ -15,6 +15,7 @@ import { BlockStack, Box, Button, Card, Checkbox, ChoiceList, Divider, Grid, Inl
 import './styles.css'
 import { ModalPopup } from "../Modal/ModalPopup";
 import fieldsData from "../../fields.json"
+import AddNewField from "../Modal/AddNewField";
 
 export default function DragAndDrop() {
     const shopify = useAppBridge();
@@ -22,6 +23,19 @@ export default function DragAndDrop() {
     const [formHeading, setFormHeading] = useState('Registration Form')
     const [fields, setFields] = useState(fieldsData.fields);
     console.log("🚀 ~ DragAndDrop ~ fields:", fields)
+    const [newField, setNewField] = useState({
+        title: "",
+        placeholder: "",
+        required: false,
+        type: "text",
+        icon: "PiTextAaBold",
+        options: [
+            { text: "", value: "" },
+            { text: "", value: "" },
+            { text: "", value: "" }
+        ] // Default 3 rows
+    });
+
 
     const [formValue, setFormValue] = useState({
         registration: 'auto',
@@ -98,7 +112,7 @@ export default function DragAndDrop() {
             label: "Form Fields",
             content: (
                 <div className="tab-content">
-                    <Scrollable shadow style={{ height: '65vh' }} focusable>
+                    <Scrollable shadow style={{ height: '60vh' }} focusable>
                         <div className="fields-container">
                             <DndContext
                                 sensors={sensors}
@@ -115,11 +129,19 @@ export default function DragAndDrop() {
                         </div>
                     </Scrollable>
                     <div className="modal-container">
+                        {/* add more field popup */}
                         <ModalPopup
                             btn_text="Add More fields"
                             activeFields={fields}
                             availableFields={availableFields}
                             handleAddField={handleAddField}
+                        />
+                        {/* create custom field popup */}
+                        <AddNewField
+                            fields={fields}
+                            setFields={setFields}
+                            newField={newField}
+                            setNewField={setNewField}
                         />
                     </div>
                 </div>
@@ -265,6 +287,7 @@ export default function DragAndDrop() {
                                 <div className="formfield">
                                     <h1>{formHeading}</h1>
                                     <form>
+
                                         {fields
                                             .filter((field) => field.active) // Show only active fields
                                             .map((field) => (
