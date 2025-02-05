@@ -30,3 +30,12 @@ model Session {
   collaborator  Boolean?  @default(false)
   emailVerified Boolean?  @default(false)
 }
+
+model Form {
+  id          String  @id
+  position    BigInt
+  title       String
+  type        String
+  required    Boolean
+  placeholder String
+}

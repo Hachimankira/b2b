@@ -6,7 +6,7 @@ import {
     DragHandleIcon,
     MinusCircleIcon
 } from '@shopify/polaris-icons';
-import { Button, Checkbox, Icon, TextField } from "@shopify/polaris";
+import { Button, Checkbox, Icon, Select, TextField } from "@shopify/polaris";
 
 // import for modal popup
 import { Modal, TitleBar, useAppBridge } from '@shopify/app-bridge-react';
@@ -68,7 +68,7 @@ const Sortablefield = ({ key, field, handleRemoveField, required, setFields, han
     };
 
     const handleCancel = () => {
-        setTempField(field); 
+        setTempField(field);
         shopify.modal.hide(`edit-field-modal-${id}`);
     };
 
@@ -93,11 +93,21 @@ const Sortablefield = ({ key, field, handleRemoveField, required, setFields, han
                         onChange={(value) => handleTempChange("placeholder", value)}
                         autoComplete="off"
                     />
-                    <Checkbox
-                        label="Required"
-                        checked={tempField.required}
-                        onChange={(value) => handleTempChange("required", value)}
-                    />
+                    <div style={{ display: 'flex'}}>
+                        <Checkbox
+                            label="Required"
+                            checked={tempField.required}
+                            onChange={(checked) => handleTempChange("required", checked)}
+                        />
+                        {/* <Select 
+                            label="Column width"
+                            options={[
+                                {label: '100%', value: '100%'},
+                                {label: '50%', value: '50%'},
+                                {label: '33%', value: '33%'},
+                            ]}
+                        /> */}
+                    </div>
                 </div>
                 <TitleBar title="Edit">
                     <button variant="primary" onClick={handleSave}> {/* Save only when clicked */}

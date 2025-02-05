@@ -1,10 +1,14 @@
 .modal-container {
   padding: 32px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  display: flex;
+  flex-direction: column;
   gap: 20px; /* space between items */
 }
+.items{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
+}
 .item {
   background-color: #f0f0f0;
   color: black;

@@ -1,17 +1,29 @@
 {
-    "fields": [
-      { "id": 1, "title": "First Name", "active": true, "type": "text", "required": true },
-      { "id": 2, "title": "Second Name", "active": true, "type": "text", "required": true },
-      { "id": 3, "title": "Email", "active": true, "type": "email", "required": true },
-      { "id": 4, "title": "Password", "active": true, "type": "password", "required": true }
+  "fields": [
+    { "id": 1, "title": "First Name", "active": true, "type": "text", "required": true, "placeholder": "", "position": 1 },
+    { "id": 2, "title": "Second Name", "active": true, "type": "text", "required": true, "placeholder": "", "position": 2 },
+    { "id": 3, "title": "Email", "active": true, "type": "email", "required": true, "placeholder": "", "position": 3 },
+    { "id": 4, "title": "Password", "active": true, "type": "password", "required": true, "placeholder": "", "position": 4 }
+  ],
+  "availableFields": {
+    "business": [
+      { "id": 5, "title": "Business Name", "type": "text", "required": false, "placeholder": "", "position": 5 },
+      { "id": 6, "title": "Phone Number", "type": "number", "required": false, "placeholder": "", "position": 6 }
     ],
-    "availableFields": [
-      { "id": 5, "title": "Business Name", "type": "text", "required": false },
-      { "id": 6, "title": "Country", "type": "text", "required": false },
-      { "id": 7, "title": "State", "type": "text", "required": false },
-      { "id": 8, "title": "City", "type": "text", "required": false },
-      { "id": 9, "title": "Zip", "type": "text", "required": false },
-      { "id": 10, "title": "VAT ID", "type": "text", "required": false }
+    "address": [
+      { "id": 7, "title": "Country", "type": "text", "required": false, "placeholder": "", "position": 7 },
+      { "id": 8, "title": "State", "type": "text", "required": false, "placeholder": "", "position": 8 },
+      { "id": 9, "title": "City", "type": "text", "required": false, "placeholder": "", "position": 9 },
+      { "id": 10, "title": "Zip", "type": "number", "required": false, "placeholder": "", "position": 10 }
+    ],
+    "Verify vat": [
+      { "id": 11, "title": "EU VAT Validation", "type": "text", "required": false, "placeholder": "", "position": 11 },
+      { "id": 12, "title": "ABN Validation", "type": "text", "required": false, "placeholder": "", "position": 12 },
+      { "id": 13, "title": "India GST Validation", "type": "text", "required": false, "placeholder": "", "position": 13 },
+      { "id": 14, "title": "UK Validation", "type": "text", "required": false, "placeholder": "", "position": 14 }
+    ],
+    "File": [
+      { "id": 15, "title": "Upload File", "type": "file", "required": false, "placeholder": "", "position": 15 }
     ]
   }
-  
+}
